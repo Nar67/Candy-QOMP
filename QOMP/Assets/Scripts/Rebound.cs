@@ -42,7 +42,6 @@ public class Rebound : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        print("Collision Out: " + gameObject.name);
         speedx *= -1;
     }
 }

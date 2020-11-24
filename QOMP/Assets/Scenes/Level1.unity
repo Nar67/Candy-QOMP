@@ -336,15 +336,6 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: 11, y: -12, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
   - first: {x: 20, y: -12, z: 0}
     second:
       serializedVersion: 2
@@ -1022,7 +1013,7 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 18
+  - m_RefCount: 17
     m_Data: {fileID: 11400000, guid: b696bc667c442b74f8a02a64ace3689a, type: 2}
   - m_RefCount: 41
     m_Data: {fileID: 11400000, guid: 4d6614614adfbe947ba0e230a288640b, type: 2}
@@ -1031,7 +1022,7 @@ Tilemap:
   - m_RefCount: 28
     m_Data: {fileID: 11400000, guid: 73d1958304933cd4ab5c38bd9000cb45, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 18
+  - m_RefCount: 17
     m_Data: {fileID: -5252415644919253072, guid: e26f3a847fb580f4986e5fb08ee84e75,
       type: 3}
   - m_RefCount: 41
@@ -1044,7 +1035,7 @@ Tilemap:
     m_Data: {fileID: 3088970862254763102, guid: e26f3a847fb580f4986e5fb08ee84e75,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 90
+  - m_RefCount: 89
     m_Data:
       e00: 1
       e01: 0
@@ -1063,7 +1054,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 90
+  - m_RefCount: 89
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1982,6 +1973,15 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 11, y: -12, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3088,7 +3088,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 65
     m_Data: {fileID: 11400000, guid: 4d6614614adfbe947ba0e230a288640b, type: 2}
-  - m_RefCount: 29
+  - m_RefCount: 30
     m_Data: {fileID: 11400000, guid: b696bc667c442b74f8a02a64ace3689a, type: 2}
   - m_RefCount: 67
     m_Data: {fileID: 11400000, guid: 73d1958304933cd4ab5c38bd9000cb45, type: 2}
@@ -3098,7 +3098,7 @@ Tilemap:
   - m_RefCount: 65
     m_Data: {fileID: -6964567438687038906, guid: e26f3a847fb580f4986e5fb08ee84e75,
       type: 3}
-  - m_RefCount: 29
+  - m_RefCount: 30
     m_Data: {fileID: -5252415644919253072, guid: e26f3a847fb580f4986e5fb08ee84e75,
       type: 3}
   - m_RefCount: 67
@@ -3108,7 +3108,7 @@ Tilemap:
     m_Data: {fileID: 6260451489450547443, guid: e26f3a847fb580f4986e5fb08ee84e75,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 194
+  - m_RefCount: 195
     m_Data:
       e00: 1
       e01: 0
@@ -3127,7 +3127,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 194
+  - m_RefCount: 195
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -3183,6 +3183,7 @@ GameObject:
   - component: {fileID: 492509904}
   - component: {fileID: 492509900}
   - component: {fileID: 492509905}
+  - component: {fileID: 492509906}
   m_Layer: 0
   m_Name: Cane
   m_TagString: Untagged
@@ -3302,6 +3303,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &492509906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492509899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1ffea25206e434aa3d978742e7cd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 1
 --- !u!1 &621854934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3542,7 +3556,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

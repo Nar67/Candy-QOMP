@@ -42,11 +42,11 @@ public class Rebound : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Tilemap_Horitzontal")
+        if (collision.gameObject.tag == "HorizontalTilemap")
         {
             dir *= -1;
         }
-        else if (collision.gameObject.name == "Tilemap_Vertical")
+        else if (collision.gameObject.tag == "VerticalTilemap")
         {
             speedx *= -1;
         }

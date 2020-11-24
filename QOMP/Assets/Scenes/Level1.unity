@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 102608350}
   m_Layer: 0
   m_Name: Tilemap_Vertical
-  m_TagString: Untagged
+  m_TagString: VerticalTilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 297358794}
   m_Layer: 0
   m_Name: Tilemap_Horitzontal
-  m_TagString: Untagged
+  m_TagString: HorizontalTilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

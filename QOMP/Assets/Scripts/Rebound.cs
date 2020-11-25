@@ -48,22 +48,24 @@ public class Rebound : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "HorizontalTilemap")
+        Collider2D collider = collision.contacts[0].otherCollider;
+        if (collider.gameObject.name == "Top" || collider.gameObject.name == "Bottom")
         {
             dir *= -1;
         }
-        else if (collision.gameObject.tag == "VerticalTilemap")
+        else if (collider.gameObject.name == "Left" || collider.gameObject.name == "Right")
         {
             speedx *= -1;
         }
-        else if (collision.gameObject.tag == "Punxes")
+        
+        if (collision.gameObject.tag == "Punxes")
         {
             gameObject.transform.position = initialPos;
             stuck = true;
             speedx = initSpeedx;
             speedy = initSpeedy;
         }
-        else 
-            speedx *= -1;
+        //else 
+        //    speedx *= -1;
     }
 }

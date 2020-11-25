@@ -9,6 +9,7 @@ TagManager:
   - Punxes
   - Key
   - Door
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -6,15 +6,21 @@ public class Rebound : MonoBehaviour
 {
     
     public float speedy = 7.0f;
-    public float speedx = -3.0f;
+    public float speedx = 3.0f;
     public bool stuck;
     private float dir;
+    private Vector3 initialPos;
+    private float initSpeedy;
+    private float initSpeedx;
 
     // Start is called before the first frame update
     void Start()
     {
         stuck = true;
         dir = speedy;
+        initialPos = gameObject.transform.position;
+        initSpeedx = speedx;
+        initSpeedy = speedy;
     }
 
     // Update is called once per frame
@@ -49,6 +55,13 @@ public class Rebound : MonoBehaviour
         else if (collision.gameObject.tag == "VerticalTilemap")
         {
             speedx *= -1;
+        }
+        else if (collision.gameObject.tag == "Punxes")
+        {
+            gameObject.transform.position = initialPos;
+            stuck = true;
+            speedx = initSpeedx;
+            speedy = initSpeedy;
         }
         else 
             speedx *= -1;

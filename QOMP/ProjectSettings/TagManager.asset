@@ -7,6 +7,8 @@ TagManager:
   - HorizontalTilemap
   - VerticalTilemap
   - Punxes
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

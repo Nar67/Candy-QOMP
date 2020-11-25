@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrackBall : MonoBehaviour
 {
-    [SerializeField] private GameObject ball;
+    public GameObject ball;
     public float speed = 7.0f;
 
     // Start is called before the first frame update

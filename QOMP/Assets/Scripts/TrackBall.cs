@@ -5,12 +5,11 @@ using UnityEngine;
 public class TrackBall : MonoBehaviour
 {
     public GameObject ball;
-    public float speed = 7.0f;
+    public float speed = 2.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-       
     }
 
     // Update is called once per frame

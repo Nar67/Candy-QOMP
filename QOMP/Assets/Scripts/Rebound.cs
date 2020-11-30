@@ -13,6 +13,8 @@ public class Rebound : MonoBehaviour
     private float initSpeedy;
     private float initSpeedx;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,10 @@ public class Rebound : MonoBehaviour
         }
         else if (collider.gameObject.name == "Left" || collider.gameObject.name == "Right")
         {
+            if(collider.gameObject.name == "Right")
+            {
+                animator.SetBool("collidedRight", true);
+            }
             speedx *= -1;
         }
         

@@ -53,13 +53,23 @@ public class Rebound : MonoBehaviour
         Collider2D collider = collision.contacts[0].otherCollider;
         if (collider.gameObject.name == "Top" || collider.gameObject.name == "Bottom")
         {
+            if (collider.gameObject.name == "Top")
+            {
+                animator.SetTrigger("collidedUp");
+            } else
+            {
+                animator.SetTrigger("collidedDown");
+            }
             dir *= -1;
         }
         else if (collider.gameObject.name == "Left" || collider.gameObject.name == "Right")
         {
             if(collider.gameObject.name == "Right")
             {
-                animator.SetBool("collidedRight", true);
+                animator.SetTrigger("collidedRight");
+            } else
+            {
+                animator.SetTrigger("collidedLeft");
             }
             speedx *= -1;
         }

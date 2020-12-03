@@ -47,41 +47,59 @@ public class Rebound : MonoBehaviour
             
     }
 
-
-    void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
-        Collider2D collider = collision.contacts[0].otherCollider;
-        if (collider.gameObject.name == "Top" || collider.gameObject.name == "Bottom")
-        {
-            if (collider.gameObject.name == "Top")
-            {
-                animator.SetTrigger("collidedUp");
-            } else
-            {
-                animator.SetTrigger("collidedDown");
-            }
-            dir *= -1;
-        }
-        else if (collider.gameObject.name == "Left" || collider.gameObject.name == "Right")
-        {
-            if(collider.gameObject.name == "Right")
-            {
-                animator.SetTrigger("collidedRight");
-            } else
-            {
-                animator.SetTrigger("collidedLeft");
-            }
-            speedx *= -1;
-        }
-        
+
         if (collision.gameObject.tag == "Punxes")
         {
+            GameObject punxes = collision.gameObject;
+            punxes.GetComponent<PunxesAttack>().stop = true;
+            stuck = true;
+            animator.SetTrigger("die");
+            yield return new WaitForSeconds(0.6f);
             gameObject.transform.position = initialPos;
+            yield return new WaitForSeconds(0.9f);
+            animator.SetTrigger("restart");
+            yield return new WaitForSeconds(0.6f);
             stuck = true;
             speedx = initSpeedx;
             speedy = initSpeedy;
+            punxes.GetComponent<PunxesAttack>().stop = false;
         }
-        //else 
-        //    speedx *= -1;
+        else
+        {
+
+            Collider2D collider = collision.contacts[0].otherCollider;
+            if (collider.gameObject.name == "Top" || collider.gameObject.name == "Bottom")
+            {
+                if (collider.gameObject.name == "Top")
+                {
+                    animator.SetTrigger("collidedUp");
+                    Debug.Log("Up");
+                }
+                else
+                {
+                    animator.SetTrigger("collidedDown");
+                    Debug.Log("D");
+                }
+                dir *= -1;
+            }
+            else if (collider.gameObject.name == "Left" || collider.gameObject.name == "Right")
+            {
+                if (collider.gameObject.name == "Right")
+                {
+                    animator.SetTrigger("collidedRight");
+                    Debug.Log("R");
+                }
+                else
+                {
+                    animator.SetTrigger("collidedLeft");
+                    Debug.Log("L");
+                }
+                speedx *= -1;
+            }
+
+        }
     }
+
 }

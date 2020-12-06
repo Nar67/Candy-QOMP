@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+public class Global
+{
+    public static bool isRedFilled;
+}
+
 public class ColorButtonPress : MonoBehaviour
 {
 
@@ -14,7 +19,7 @@ public class ColorButtonPress : MonoBehaviour
     public Sprite blueSquare;
     public Sprite redFrame;
     public Sprite redSquare;
-    private bool isRedFilled = true;
+    private bool thisButtonRed = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,7 @@ public class ColorButtonPress : MonoBehaviour
         
         redTile.sprite = redSquare; //change red square for red frame
         blueTile.sprite = blueFrame; //chage blue frame for blue square
+        Global.isRedFilled = true;
         redTilemap.GetComponent<Collider2D>().enabled = true;
         blueTilemap.GetComponent<Collider2D>().enabled = false;
         redTilemap.RefreshAllTiles();
@@ -31,12 +37,25 @@ public class ColorButtonPress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(thisButtonRed != Global.isRedFilled)
+        {
+            thisButtonRed = Global.isRedFilled;
+            if(Global.isRedFilled)
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("test");
-        if(isRedFilled)
+        if(Global.isRedFilled)
         {
             redTile.sprite = redFrame; //change red square for red frame
 
@@ -52,7 +71,8 @@ public class ColorButtonPress : MonoBehaviour
         }
         redTilemap.GetComponent<Collider2D>().enabled = !redTilemap.GetComponent<Collider2D>().enabled;
         blueTilemap.GetComponent<Collider2D>().enabled = !blueTilemap.GetComponent<Collider2D>().enabled;
-        isRedFilled = !isRedFilled;
+        Global.isRedFilled = !Global.isRedFilled; // change the state of all buttons
+        thisButtonRed = !thisButtonRed; //this one button state, we need this var for updating when other button is pressed
         redTilemap.RefreshAllTiles();
         blueTilemap.RefreshAllTiles();
     }

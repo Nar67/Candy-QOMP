@@ -12,6 +12,7 @@ public class Rebound : MonoBehaviour
     private Vector3 initialPos;
     private float initSpeedy;
     private float initSpeedx;
+    private bool dead;
 
     public Animator animator;
 
@@ -23,38 +24,43 @@ public class Rebound : MonoBehaviour
         initialPos = gameObject.transform.position;
         initSpeedx = speedx;
         initSpeedy = speedy;
+        dead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (stuck)
+        if (!dead)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (stuck)
             {
-                stuck = false;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    stuck = false;
+                    transform.Translate(speedx * Time.deltaTime, dir * Time.deltaTime, 0.0f);
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    dir *= -1;
+                }
                 transform.Translate(speedx * Time.deltaTime, dir * Time.deltaTime, 0.0f);
             }
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                dir *= -1;
-            }
-            transform.Translate(speedx * Time.deltaTime, dir * Time.deltaTime, 0.0f);
-        }
-            
+       
     }
 
     IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Punxes")
+        if (collision.gameObject.tag == "Punxes_H" || collision.gameObject.tag == "Punxes_V")
         {
             GameObject punxes = collision.gameObject;
             punxes.GetComponent<PunxesAttack>().stop = true;
             stuck = true;
+            dead = true;
             animator.SetTrigger("die");
             yield return new WaitForSeconds(0.6f);
             gameObject.transform.position = initialPos;
@@ -65,6 +71,7 @@ public class Rebound : MonoBehaviour
             speedx = initSpeedx;
             speedy = initSpeedy;
             punxes.GetComponent<PunxesAttack>().stop = false;
+            dead = false;
         }
         else
         {

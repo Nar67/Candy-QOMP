@@ -5,13 +5,15 @@ using UnityEngine;
 public class ChangeRoom : MonoBehaviour
 {
     public GameObject cam;
-    private float offset;
+    private float offsetx;
+    private float offsety;
     private bool change;
     // Start is called before the first frame update
     void Start()
     {
         change = false;
-        offset = 30.0f;
+        offsetx = 30.0f;
+        offsety = -15.0f;
     }
 
     // Update is called once per frame
@@ -26,8 +28,17 @@ public class ChangeRoom : MonoBehaviour
         if (!change)
         {
             change = true;
-            cam.transform.Translate(offset, 0.0f, 0.0f);
-            offset *= -1;
+            if(gameObject.tag == "Change_H")
+            {
+                cam.transform.Translate(offsetx, 0.0f, 0.0f);
+                offsetx *= -1;
+            }
+            else
+            {
+                cam.transform.Translate(0.0f, offsety, 0.0f);
+                offsety *= -1;
+            }
+                
             yield return new WaitForSeconds(2.0f);
             change = false;
         }

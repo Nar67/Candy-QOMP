@@ -12,6 +12,8 @@ TagManager:
   - Wall
   - Punxes_H
   - Punxes_V
+  - Change_H
+  - Change_V
   layers:
   - Default
   - TransparentFX

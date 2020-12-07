@@ -12,7 +12,7 @@ public class Rebound : MonoBehaviour
     private Vector3 initialPos;
     private float initSpeedy;
     private float initSpeedx;
-    private bool dead;
+    public bool dead;
 
     public Animator animator;
 
@@ -58,19 +58,17 @@ public class Rebound : MonoBehaviour
         if (collision.gameObject.tag == "Punxes_H" || collision.gameObject.tag == "Punxes_V")
         {
             GameObject punxes = collision.gameObject;
-            punxes.GetComponent<PunxesAttack>().stop = true;
             stuck = true;
             dead = true;
             animator.SetTrigger("die");
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(0.567f);
             gameObject.transform.position = initialPos;
-            yield return new WaitForSeconds(0.9f);
+            yield return new WaitForSeconds(0.5f);
             animator.SetTrigger("restart");
             yield return new WaitForSeconds(0.6f);
             stuck = true;
             speedx = initSpeedx;
             speedy = initSpeedy;
-            punxes.GetComponent<PunxesAttack>().stop = false;
             dead = false;
         }
         else

@@ -8,6 +8,12 @@ public class ChangeRoom : MonoBehaviour
     private float offsetx;
     private float offsety;
     private bool change;
+
+    public float smoothTime = 0.5F;
+    private Vector3 velocity = Vector3.zero;
+    private Vector3 camStartPos;
+    private Vector3 camEndPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +25,10 @@ public class ChangeRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+        if(change)
+        {
+            cam.transform.position = Vector3.SmoothDamp(cam.transform.position, camEndPos, ref velocity, smoothTime);
+        }
     }
 
     IEnumerator OnTriggerExit2D(Collider2D col)
@@ -27,15 +36,16 @@ public class ChangeRoom : MonoBehaviour
         Debug.Log("Trigger");
         if (!change)
         {
+            camStartPos = cam.transform.position;
             change = true;
             if(gameObject.tag == "Change_H")
             {
-                cam.transform.Translate(offsetx, 0.0f, 0.0f);
+                camEndPos = camStartPos + new Vector3(offsetx, 0.0f, 0.0f);
                 offsetx *= -1;
             }
-            else
+            else if(gameObject.tag == "Change_V")
             {
-                cam.transform.Translate(0.0f, offsety, 0.0f);
+                camEndPos = camStartPos + new Vector3(0.0f, offsety, 0.0f);
                 offsety *= -1;
             }
                 

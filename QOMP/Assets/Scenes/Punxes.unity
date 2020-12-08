@@ -6210,6 +6210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 422458830}
+  smoothTime: 0.3
 --- !u!1 &570324712
 GameObject:
   m_ObjectHideFlags: 0
@@ -6331,6 +6332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 422458830}
+  smoothTime: 0.3
 --- !u!50 &570324718
 Rigidbody2D:
   serializedVersion: 4

@@ -215,6 +215,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 5235148}
+    - target: {fileID: 3629672587363617389, guid: 49b5e46c90c8dd04087f09eb927a359f,
+        type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b5e46c90c8dd04087f09eb927a359f, type: 3}
 --- !u!1 &640024374
@@ -228,6 +233,7 @@ GameObject:
   - component: {fileID: 640024375}
   - component: {fileID: 640024377}
   - component: {fileID: 640024376}
+  - component: {fileID: 640024378}
   m_Layer: 0
   m_Name: Red
   m_TagString: Untagged
@@ -577,6 +583,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &640024378
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640024374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &804032190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3396566112431397362, guid: fd1aea0c856d93d4e80fb0ad46e8f3ad,
@@ -734,6 +756,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 5235148}
+    - target: {fileID: 618845656269293651, guid: 8c547363562fd0658bf154297266e0c8,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c547363562fd0658bf154297266e0c8, type: 3}
 --- !u!1001 &1096927893
@@ -803,6 +830,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 855033099054363495, guid: 64d27f3667b63eeb387f2e41ec74339f,
+        type: 3}
+      propertyPath: redTilemap
+      value: 
+      objectReference: {fileID: 640024377}
+    - target: {fileID: 855033099054363495, guid: 64d27f3667b63eeb387f2e41ec74339f,
+        type: 3}
+      propertyPath: blueTilemap
+      value: 
+      objectReference: {fileID: 1850758570}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64d27f3667b63eeb387f2e41ec74339f, type: 3}
 --- !u!1 &1124783960
@@ -1132,6 +1169,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 5235148}
+    - target: {fileID: 3629672587363617389, guid: 49b5e46c90c8dd04087f09eb927a359f,
+        type: 3}
+      propertyPath: speed
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b5e46c90c8dd04087f09eb927a359f, type: 3}
 --- !u!1001 &1544038844
@@ -1149,12 +1191,12 @@ PrefabInstance:
     - target: {fileID: 2336300503157237499, guid: 8b832acf67cf11c6e92470140f6a811f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 2336300503157237499, guid: 8b832acf67cf11c6e92470140f6a811f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 2336300503157237499, guid: 8b832acf67cf11c6e92470140f6a811f,
         type: 3}
@@ -1290,6 +1332,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 5235148}
+    - target: {fileID: 3629672587363617389, guid: 49b5e46c90c8dd04087f09eb927a359f,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b5e46c90c8dd04087f09eb927a359f, type: 3}
 --- !u!1 &1850758567
@@ -1303,6 +1350,7 @@ GameObject:
   - component: {fileID: 1850758568}
   - component: {fileID: 1850758570}
   - component: {fileID: 1850758569}
+  - component: {fileID: 1850758571}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -1528,6 +1576,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1850758571
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850758567}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1001 &2055328389
 PrefabInstance:
   m_ObjectHideFlags: 0

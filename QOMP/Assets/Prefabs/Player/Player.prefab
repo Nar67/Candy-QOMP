@@ -51,8 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedy: 7
-  speedx: -3
+  speedx: 3
   stuck: 0
+  dead: 0
   animator: {fileID: 5869383459259398358}
 --- !u!50 &2336300503157237496
 Rigidbody2D:

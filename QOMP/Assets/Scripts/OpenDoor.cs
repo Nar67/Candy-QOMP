@@ -5,7 +5,7 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     public bool key;
-    public Material mat;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +17,9 @@ public class OpenDoor : MonoBehaviour
     {
         if (key)
         {
-            this.GetComponent<MeshRenderer>().material = mat;
+            animator.SetTrigger("key");
             Destroy(this.GetComponent<BoxCollider2D>());
+            key = false;
         }
         
     }

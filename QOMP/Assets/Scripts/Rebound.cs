@@ -55,7 +55,7 @@ public class Rebound : MonoBehaviour
     IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Punxes_H" || collision.gameObject.tag == "Punxes_V")
+        if (collision.gameObject.tag == "Punxes")
         {
             GameObject punxes = collision.gameObject;
             stuck = true;
@@ -65,7 +65,7 @@ public class Rebound : MonoBehaviour
             gameObject.transform.position = initialPos;
             yield return new WaitForSeconds(0.5f);
             animator.SetTrigger("restart");
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(0.5f);
             stuck = true;
             speedx = initSpeedx;
             speedy = initSpeedy;
@@ -80,12 +80,12 @@ public class Rebound : MonoBehaviour
                 if (collider.gameObject.name == "Top")
                 {
                     animator.SetTrigger("collidedUp");
-                    Debug.Log("Up");
+                    //Debug.Log("Up");
                 }
                 else
                 {
                     animator.SetTrigger("collidedDown");
-                    Debug.Log("D");
+                    //Debug.Log("D");
                 }
                 dir *= -1;
             }
@@ -94,12 +94,12 @@ public class Rebound : MonoBehaviour
                 if (collider.gameObject.name == "Right")
                 {
                     animator.SetTrigger("collidedRight");
-                    Debug.Log("R");
+                    //Debug.Log("R");
                 }
                 else
                 {
                     animator.SetTrigger("collidedLeft");
-                    Debug.Log("L");
+                    //Debug.Log("L");
                 }
                 speedx *= -1;
             }

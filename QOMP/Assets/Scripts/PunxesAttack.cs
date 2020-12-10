@@ -21,23 +21,19 @@ public class PunxesAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stop) {
-            if (this.gameObject.tag == "Punxes_H" && !ball.GetComponent<Rebound>().dead)
-            {
-
-                if ((ball.transform.position.y < transform.position.y + 1) &&
-                    (ball.transform.position.y > transform.position.y - 1 ))
-                {
-                    stop = false;
-                }
-                              
-            }
-            
+        toofar();
+        if (stop)
+        {
+            if (!ball.GetComponent<Rebound>().dead &&
+            (ball.transform.position.y < transform.position.y + 1) &&
+            (ball.transform.position.y > transform.position.y - 1))
+                stop = false;
         }
         else
         {
             transform.Translate(speed * Time.deltaTime, 0.0f, 0.0f);
         }
+            
     }
 
     IEnumerator OnCollisionEnter2D(Collision2D collision)
@@ -47,7 +43,7 @@ public class PunxesAttack : MonoBehaviour
             Debug.Log("Punxes");
             speed *= -1;
             stop = true;
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.4f);
             stop = false;
         }
         else
@@ -57,6 +53,13 @@ public class PunxesAttack : MonoBehaviour
             gameObject.transform.position = initialPos;
             speed = initspeed;
         }
+    }
+
+    void toofar()
+    {
+        if ((ball.transform.position.y > transform.position.y + 5) ||
+            (ball.transform.position.y < transform.position.y - 5))
+            stop = true;
     }
 
 }

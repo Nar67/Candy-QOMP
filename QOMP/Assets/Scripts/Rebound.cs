@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Rebound : MonoBehaviour
 {
-    
+    public AudioSource bounce;
+
     public float speedy = 7.0f;
     public float speedx = 3.0f;
     public bool stuck;
@@ -25,6 +26,7 @@ public class Rebound : MonoBehaviour
         initSpeedx = speedx;
         initSpeedy = speedy;
         dead = false;
+        bounce = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -73,7 +75,7 @@ public class Rebound : MonoBehaviour
         }
         else
         {
-
+            bounce.Play();
             Collider2D collider = collision.contacts[0].otherCollider;
             if (collider.gameObject.name == "Top" || collider.gameObject.name == "Bottom")
             {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PunxesAttack : MonoBehaviour
 {
+    public AudioSource audio;
     public GameObject ball;
     public float speed = 20.0f;
     public bool stop;
@@ -16,6 +17,7 @@ public class PunxesAttack : MonoBehaviour
         stop = true;
         initspeed = speed;
         initialPos = gameObject.transform.position;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,7 +42,6 @@ public class PunxesAttack : MonoBehaviour
     {
         if (collision.gameObject != ball)
         {
-            Debug.Log("Punxes");
             speed *= -1;
             stop = true;
             yield return new WaitForSeconds(0.4f);
@@ -48,6 +49,7 @@ public class PunxesAttack : MonoBehaviour
         }
         else
         {
+            audio.Play();
             stop = true;
             yield return new WaitForSeconds(1.0f);
             gameObject.transform.position = initialPos;

@@ -18,7 +18,7 @@ public class ChangeRoom : MonoBehaviour
     void Start()
     {
         change = false;
-        offsetx = 30.0f;
+        offsetx = -15.0f;
         offsety = -15.0f;
     }
 

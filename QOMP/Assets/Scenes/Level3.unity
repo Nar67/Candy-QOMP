@@ -10870,6 +10870,7 @@ GameObject:
   - component: {fileID: 1014848420}
   - component: {fileID: 1014848422}
   - component: {fileID: 1014848421}
+  - component: {fileID: 1014848423}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -11235,6 +11236,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1014848423
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014848419}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1001 &1124105194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11409,6 +11426,7 @@ GameObject:
   - component: {fileID: 1275858508}
   - component: {fileID: 1275858510}
   - component: {fileID: 1275858509}
+  - component: {fileID: 1275858511}
   m_Layer: 0
   m_Name: Red
   m_TagString: Untagged
@@ -11778,6 +11796,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1275858511
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275858507}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1001 &1313155994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12011,6 +12045,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 855033099054363495, guid: 64d27f3667b63eeb387f2e41ec74339f,
+        type: 3}
+      propertyPath: redTilemap
+      value: 
+      objectReference: {fileID: 1275858510}
+    - target: {fileID: 855033099054363495, guid: 64d27f3667b63eeb387f2e41ec74339f,
+        type: 3}
+      propertyPath: blueTilemap
+      value: 
+      objectReference: {fileID: 1014848422}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64d27f3667b63eeb387f2e41ec74339f, type: 3}
 --- !u!1001 &1644245128

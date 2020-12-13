@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7753662474371440071}
   - component: {fileID: 7753662474371440068}
   - component: {fileID: 7753662474371440069}
-  - component: {fileID: 7753662474371440066}
   - component: {fileID: -875858538050749038}
+  - component: {fileID: 5268575584205035931}
+  - component: {fileID: 3911059445163756923}
   m_Layer: 0
   m_Name: Reward
   m_TagString: Untagged
@@ -81,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7753662474371440066
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753662474371440067}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &-875858538050749038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,3 +95,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
+--- !u!114 &5268575584205035931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753662474371440067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d7cae6e356d79979440bc0f111749f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: 
+--- !u!60 &3911059445163756923
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753662474371440067}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.50513583, y: 0.52357304}
+      - {x: -0.30221093, y: 0.14332674}
+      - {x: -0.102638155, y: -0.1046121}
+      - {x: -0.2622934, y: -0.20986117}
+      - {x: -0.226802, y: -0.40450853}
+      - {x: -0.026912726, y: -0.4939626}
+      - {x: 0.28848708, y: -0.49966246}
+      - {x: 0.42248273, y: -0.4296674}
+      - {x: 0.52821803, y: -0.39176688}
+      - {x: 0.5016954, y: -0.18084913}
+      - {x: 0.3564396, y: -0.10140483}
+      - {x: 0.11091268, y: -0.080533475}
+      - {x: -0.030612782, y: 0.043568622}

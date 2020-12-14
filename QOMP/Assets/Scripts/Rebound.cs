@@ -57,7 +57,7 @@ public class Rebound : MonoBehaviour
     IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Punxes")
+        if (collision.gameObject.tag == "Punxes" || collision.gameObject.tag == "Spikes")
         {
             GameObject punxes = collision.gameObject;
             stuck = true;

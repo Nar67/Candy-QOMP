@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - Change_H
   - Change_V
+  - Spikes
   layers:
   - Default
   - TransparentFX

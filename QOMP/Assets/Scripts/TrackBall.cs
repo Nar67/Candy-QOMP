@@ -9,10 +9,12 @@ public class TrackBall : MonoBehaviour
 
     private bool collidedTop;
     private bool collidedBot;
+    private bool far;
 
     // Start is called before the first frame update
     void Start()
     {
+        far = true;
     }
 
     // Update is called once per frame
@@ -31,7 +33,30 @@ public class TrackBall : MonoBehaviour
                 collidedTop = false;
             }
         }
+
+        checkDistance();
         
+    }
+
+    void checkDistance()
+    {
+        if (far)
+        {
+            if (ball.transform.position.x > transform.position.x - 3 &&
+                ball.transform.position.x < transform.position.x + 3)
+            {
+                far = false;
+                speed++;
+            }
+        } else
+        {
+            if (ball.transform.position.x < transform.position.x - 3 ||
+                ball.transform.position.x > transform.position.x + 3)
+            {
+                far = true;
+                speed--;
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

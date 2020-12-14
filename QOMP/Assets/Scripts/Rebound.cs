@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Rebound : MonoBehaviour
 {
@@ -15,6 +17,11 @@ public class Rebound : MonoBehaviour
     private float initSpeedx;
     public bool dead;
 
+    public Text text;
+    public bool godmode;
+    private float timeToAppear = 2f;
+    private float timeToDisappear;
+
     public Animator animator;
 
     // Start is called before the first frame update
@@ -27,6 +34,7 @@ public class Rebound : MonoBehaviour
         initSpeedy = speedy;
         dead = false;
         bounce = GetComponent<AudioSource>();
+        godmode = false;
     }
 
     // Update is called once per frame
@@ -51,13 +59,37 @@ public class Rebound : MonoBehaviour
                 transform.Translate(speedx * Time.deltaTime, dir * Time.deltaTime, 0.0f);
             }
         }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if(godmode)
+            {
+                text.text = "Godmode: off";
+                godmode = false;
+            }
+            else
+            {
+                text.text = "Godmode: on";
+                godmode = true;
+            }
+            enableText();
+        }
+        if(Time.time >= timeToDisappear)
+        {
+            text.enabled = false;
+        }
        
+    }
+
+    public void enableText()
+    {
+        text.enabled = true;
+        timeToDisappear = Time.time + timeToAppear;
     }
 
     IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Punxes" || collision.gameObject.tag == "Spikes")
+        if ((collision.gameObject.tag == "Punxes" || collision.gameObject.tag == "Spikes") && !godmode)
         {
             GameObject punxes = collision.gameObject;
             stuck = true;

@@ -17,10 +17,7 @@ public class Rebound : MonoBehaviour
     private float initSpeedx;
     public bool dead;
 
-    public Text text;
     public bool godmode;
-    private float timeToAppear = 2f;
-    private float timeToDisappear;
 
     public Animator animator;
 
@@ -61,21 +58,7 @@ public class Rebound : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
-            if(godmode)
-            {
-                text.text = "Godmode: off";
-                godmode = false;
-            }
-            else
-            {
-                text.text = "Godmode: on";
-                godmode = true;
-            }
-            enableText();
-        }
-        if(Time.time >= timeToDisappear)
-        {
-            text.enabled = false;
+            
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -83,12 +66,6 @@ public class Rebound : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
        
-    }
-
-    public void enableText()
-    {
-        text.enabled = true;
-        timeToDisappear = Time.time + timeToAppear;
     }
 
     IEnumerator OnCollisionEnter2D(Collision2D collision)

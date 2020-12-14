@@ -77,6 +77,11 @@ public class Rebound : MonoBehaviour
         {
             text.enabled = false;
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        }
        
     }
 

@@ -1007,10 +1007,40 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2563569344719031106, guid: ade39ef60e04645319914f531f41daa8,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563569344719031106, guid: ade39ef60e04645319914f531f41daa8,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2125601533}
+    - target: {fileID: 2563569344719031106, guid: ade39ef60e04645319914f531f41daa8,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2563569344719031109, guid: ade39ef60e04645319914f531f41daa8,
         type: 3}
       propertyPath: m_Name
       value: GodmodeText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563569344719031109, guid: ade39ef60e04645319914f531f41daa8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563569346240271288, guid: ade39ef60e04645319914f531f41daa8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 37.199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563569346240271289, guid: ade39ef60e04645319914f531f41daa8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ade39ef60e04645319914f531f41daa8, type: 3}
@@ -2987,6 +3017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 713727807652797137, guid: 32c928f76ae652e969238a9a7b52dbc4,
+        type: 3}
+      propertyPath: far clip plane
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 713727807652797139, guid: 32c928f76ae652e969238a9a7b52dbc4,
         type: 3}
@@ -22068,6 +22103,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8627676626309116513, guid: d5ab508e2492f00f5875782e5512d1f0,
     type: 3}
   m_PrefabInstance: {fileID: 2055328389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &2125601533 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 713727807652797137, guid: 32c928f76ae652e969238a9a7b52dbc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1292792075}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3396566111774758732
 PrefabInstance:

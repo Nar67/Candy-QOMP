@@ -6,9 +6,11 @@ public class NextLevel : MonoBehaviour
 {
 
     public string nextSceneName;
-    
-    void OnCollisionEnter2D(Collision2D collision)
+
+    IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
+        Destroy(this.GetComponent<PolygonCollider2D>());
+        yield return new WaitForSeconds(1.0f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
     }
 }

@@ -13,6 +13,7 @@ TagManager:
   - Change_H
   - Change_V
   - Spikes
+  - Reward
   layers:
   - Default
   - TransparentFX

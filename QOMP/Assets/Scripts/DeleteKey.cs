@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DeleteKey : MonoBehaviour
 {
-
     public GameObject door;
     public float speed = 70;
     Vector3 currentEulerAngles;
@@ -13,7 +12,7 @@ public class DeleteKey : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-   
+
     }
 
     // Update is called once per frame
@@ -31,7 +30,7 @@ public class DeleteKey : MonoBehaviour
         if (currentRotation.eulerAngles.z > 45.0f && currentRotation.eulerAngles.z < 315.0f)
             speed *= -1;
     }
-    
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         door.GetComponent<OpenDoor>().key = true;

@@ -6,7 +6,13 @@ using UnityEngine.UI;
 
 public class Rebound : MonoBehaviour
 {
-    public AudioSource bounce;
+    public AudioClip bounce;
+    public AudioClip key;
+    public AudioClip poweroff;
+    public AudioClip reward;
+    public AudioClip god;
+    public AudioClip mundane;
+    public AudioSource audio;
 
     public float speedy = 7.0f;
     public float speedx = 3.0f;
@@ -30,7 +36,7 @@ public class Rebound : MonoBehaviour
         initSpeedx = speedx;
         initSpeedy = speedy;
         dead = false;
-        bounce = GetComponent<AudioSource>();
+        audio = GetComponent<AudioSource>();
         godmode = false;
     }
 
@@ -58,7 +64,12 @@ public class Rebound : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
-            
+            godmode = !godmode;
+            if (godmode)
+                audio.clip = god;
+            else
+                audio.clip = mundane;
+            audio.Play();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -73,6 +84,8 @@ public class Rebound : MonoBehaviour
 
         if ((collision.gameObject.tag == "Punxes" || collision.gameObject.tag == "Spikes") && !godmode)
         {
+            audio.clip = poweroff;
+            audio.Play();
             GameObject punxes = collision.gameObject;
             stuck = true;
             dead = true;
@@ -87,9 +100,23 @@ public class Rebound : MonoBehaviour
             speedy = initSpeedy;
             dead = false;
         }
+        else if (collision.gameObject.tag == "Key")
+        {
+            audio.clip = key;
+            audio.Play();
+            yield return new WaitForSeconds(0.7f);
+        }
+        else if (collision.gameObject.tag == "Reward")
+        {
+            stuck = true;
+            audio.clip = reward;
+            audio.Play();
+            yield return new WaitForSeconds(1.0f);
+        }
         else
         {
-            bounce.Play();
+            audio.clip = bounce;
+            audio.Play();
             Collider2D collider = collision.contacts[0].otherCollider;
             if (collider.gameObject.name == "Top" || collider.gameObject.name == "Bottom")
             {
